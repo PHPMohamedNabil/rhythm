@@ -1,0 +1,246 @@
+.home_font{
+	  color: #20282F;
+	  font-size: 15px;
+}
+.bg-body{
+	background-image: linear-gradient(234, 234,234);
+	background-color: #f5f5f6;
+}
+.icon-color{
+	color: #20282F;
+}
+
+.icon-menu{
+	color: #323A56;
+}
+
+.search-inp{
+
+	 border-radius: 12px;
+}
+
+.cat-hover{
+	  transition: all 0.2s linear;
+}
+.cat-hover:hover span a{
+	  cursor: pointer;
+	  color: #fff;
+	  
+}
+.cat-hover:hover{
+	background-color:#323A56;
+	color: #fff;
+  cursor: pointer;
+
+}
+
+.button-rh{
+text-transform: uppercase;
+    letter-spacing: .05rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.75
+rem
+ 1.25
+rem
+ 0.5
+rem
+;
+    color: #fff;
+    background: #323a56;
+    font-family: Cabin-semi-bold,sans-serif;
+    font-size: .875rem;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    border: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    transition: all 0.2s ease-in-out;
+}
+
+.button-rh:hover{
+     color: #fff;
+    background: #2c40d0;
+}
+
+.page-sub-title
+{
+	color: #666666;
+}
+
+.search_res{
+	margin-top: -7px;
+    border-radius: 9px;
+    z-index: 9999;
+    position: absolute;
+    left: 133px;
+    width: 70%;
+}
+.link_search{
+	color:#2d2d2d;
+}
+.link_search:hover{
+	background: #f1f1f1;
+}
+
+
+.home-active-link .nav-link{
+	color: inherit !important;
+}
+
+.home-active-link{
+	background-color:#323A56;
+	border-radius:7px;
+	color: #fff;
+	transition: all 0.2s ease-in-out;
+}
+
+.home-active-link:hover,.home-active-link:hover .nav-link{
+	color: #323A56;
+	background-color: #fff;
+	//border: 1px solid #323A56;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*
+*
+* ==========================================
+* CUSTOM UTIL CLASSES
+* ==========================================
+*
+*/
+
+/* Timeline holder */
+ul.timeline {
+    list-style-type: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+ /* Timeline vertical line */
+ul.timeline:before {
+    content: ' ';
+    background: #fff;
+    display: inline-block;
+    position: absolute;
+    left: 16px;
+    width: 4px;
+    height: 100%;
+    z-index: 400;
+    border-radius: 1rem;
+}
+
+li.timeline-item {
+    margin: 20px 0;
+}
+
+/* Timeline item arrow */
+.timeline-arrow {
+    border-top: 0.5rem solid transparent;
+    border-right: 0.5rem solid #fff;
+    border-bottom: 0.5rem solid transparent;
+    display: block;
+    position: absolute;
+    left: 2rem;
+}
+
+/* Timeline item circle marker */
+li.timeline-item::before {
+    content: ' ';
+    background: #ddd;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    left: 11px;
+    width: 14px;
+    height: 14px;
+    z-index: 400;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+
+
+.text-gray {
+    color: #999;
+}
+
+
