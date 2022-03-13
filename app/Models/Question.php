@@ -8,6 +8,7 @@ use App\Models\User;
 
 class Question extends Model
 {
+
     use HasFactory;
 
     protected $fillable = ['title','answer_title','answer','attachment','user_id'];
@@ -16,4 +17,5 @@ class Question extends Model
     {
         return $this->belongsTo(User::class);
     }
+    
 }
