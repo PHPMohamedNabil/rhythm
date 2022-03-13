@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             'name' => 'mohamed',
             'username'=>'Admin',
             'email' =>'mohamedn085@gmail.com',
-            'password' => Hash::make('12345678')
+            'password' => Hash::make(12345678),
+            'role_id'=>1
         ]);
 
         DB::table('roles')->insert([
