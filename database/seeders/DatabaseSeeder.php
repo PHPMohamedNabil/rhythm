@@ -16,13 +16,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
-            'name' => 'mohamed',
-            'username'=>'Admin',
-            'email' =>'mohamedn085@gmail.com',
-            'password' => Hash::make(12345678),
-            'role_id'=>1
-        ]);
 
         DB::table('roles')->insert([
             'name' =>'Admin',
@@ -32,6 +25,13 @@ class DatabaseSeeder extends Seeder
         DB::table('permissions')->insert([
             'role_id' => 1,
             'permissions' =>'{"categories":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"questions":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"pages":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"templates":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"users":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"permissions":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"roles":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"walls":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"},"system_links":{"can-add":"on","can-edit":"on","can-view":"on","can-delete":"on","can-list":"on","can-publish":"on"}}'
+        ]);
+        DB::table('users')->insert([
+            'name' => 'mohamed',
+            'username'=>'Admin',
+            'email' =>'mohamedn085@gmail.com',
+            'password' => Hash::make(12345678),
+            'role_id'=>1
         ]);
     }
 }
