@@ -52,6 +52,8 @@ class QuestionController extends Controller
          if($request->hasFile('attachment'))
          {
             $file= $request->file('attachment')->store('attachments');
+
+            return dd($file);
             Question::create(['title'=>$request->title,
                               'answer_title'=>$request->answer_title,
                               'answer'=>$request->answer,
