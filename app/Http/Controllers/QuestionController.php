@@ -53,7 +53,7 @@ class QuestionController extends Controller
          {
             $file= $request->file('attachment')->store('attachments');
 
-            return dd($file);
+          //  return dd($file);
             Question::create(['title'=>$request->title,
                               'answer_title'=>$request->answer_title,
                               'answer'=>$request->answer,
@@ -61,7 +61,7 @@ class QuestionController extends Controller
                               'user_id'   =>auth()->user()->id
 
          ]);
-        Image::make(public_path($file))->insert(public_path($file));
+        Image::make($file)->insert($file);
 
             return redirect()->route('question.index')->with('msg','Question Added Successfully');
          }
