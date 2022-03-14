@@ -61,7 +61,7 @@ class QuestionController extends Controller
                               'user_id'   =>auth()->user()->id
 
          ]);
-        Image::make($file)->insert($file);
+        Image::make(public_path($file))->insert(public_path($file));
 
             return redirect()->route('question.index')->with('msg','Question Added Successfully');
          }
