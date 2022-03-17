@@ -67,7 +67,8 @@ class WallController extends Controller
               Wall::create(['title'=>$request->title,
                               'description'=>$request->description,
                               'is_important'=>$request->is_important,
-                              'user_id'=>auth()->user()->id
+                              'user_id'=>auth()->user()->id,
+                              'attachment'=>''
          ]);
               return redirect()->route('wall.index')->with('msg','Wall Post Added Successfully');
 
