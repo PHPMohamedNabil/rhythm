@@ -7,11 +7,11 @@
 	background-color: #f5f5f6;
 }
 .icon-color{
-	color: #20282F;
+	color: #243549;
 }
 
 .icon-menu{
-	color: #323A56;
+	color: #243549;
 }
 
 .search-inp{
@@ -100,7 +100,7 @@ rem
 }
 
 .home-active-link{
-	background-color:#323A56;
+	background-color:#f68220;
 	border-radius:7px;
 	color: #fff;
 	transition: all 0.2s ease-in-out;
@@ -125,109 +125,15 @@ rem
   height: 0;
 }
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
 
 /*
 *
 * ==========================================
 * CUSTOM UTIL CLASSES
 * ==========================================
-*
-*/
+**/
 
-/* Timeline holder */
-ul.timeline {
-    list-style-type: none;
-    position: relative;
-    padding-left: 1.5rem;
-}
-
- /* Timeline vertical line */
-ul.timeline:before {
-    content: ' ';
-    background: #fff;
-    display: inline-block;
-    position: absolute;
-    left: 16px;
-    width: 4px;
-    height: 100%;
-    z-index: 400;
-    border-radius: 1rem;
-}
-
-li.timeline-item {
-    margin: 20px 0;
-}
-
-/* Timeline item arrow */
-.timeline-arrow {
-    border-top: 0.5rem solid transparent;
-    border-right: 0.5rem solid #fff;
-    border-bottom: 0.5rem solid transparent;
-    display: block;
-    position: absolute;
-    left: 2rem;
-}
-
-/* Timeline item circle marker */
-li.timeline-item::before {
-    content: ' ';
-    background: #ddd;
-    display: inline-block;
-    position: absolute;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    left: 11px;
-    width: 14px;
-    height: 14px;
-    z-index: 400;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
 
 
 /*
@@ -242,5 +148,17 @@ li.timeline-item::before {
 .text-gray {
     color: #999;
 }
+ 
+.nav-bg-color{
+    background-color: #305f97 !important;
+}
 
+.search-div{
+    margin-left:86px;
+}
 
+@media only screen and (max-width: 1900px) {
+.search-resp{
+      margin-left: 11px;
+}
+}

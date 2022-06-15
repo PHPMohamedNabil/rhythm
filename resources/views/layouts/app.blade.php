@@ -12,80 +12,36 @@
    
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+  
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<style type="text/css">
-    
-</style>
-<body class="bg-body home_font">
- 
-    <div id="app">
+<body class="">
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}" style="margin-top: -9px;">
-                    <img src="{{asset('rhythm_logo__final.png')}}" width="80px">
-                </a>
-                 <a class="mr-4 ml-4 icon-color" href="{{route('categories_all')}}">
-                    Category
-                </a>
-                <form action="" method="get" class="col-md-6">
-                    
-                    <input type="search" name="query" class="form-control search-inp" placeholder="search..." autocomplete="off" id="search_query" style="border-radius:20px;" />
-
-                </form>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+ <nav class="navbar navbar-expand-md nav-bg-color">
+ <div class="container">
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fas fa-bars" style="color:#fff;"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
+                <!-- Left side of navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <a  class="text-white" href="{{asset('/home')}}">
+                         <img src="{{asset('logo-white.svg')}}">&nbsp; <span>Fakrny</span>
+                     </a>
+                     @yield('search_non_main'.'')
                     </ul>
-
+                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                       @include('layouts.nav_icon')
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div class="search_res">
-            <div class="col-md-6 justify-content-center mx-auto align items center" style="z-index:9999;">
-                <div id="autocomplete_holder" style="z-index:9999;"> 
-                   <div id="autocomplete" style="display: none;width:100%;">
-                     
-                   </div>
-                </div>
-            </div>
-        </div>
-
-        <main class="py-4">
-            @yield('content')
-        </main>
-
-<aside class="control-sidebar control-sidebar-dark" style="width:25%;">
-    <!-- Control sidebar content goes here -->
-      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-          <i class="fas fa-arrow-right"></i>
-        </a>
-    <div class="p-3">
-        <div class="dropdown">
-  <a class="nav-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      @if(!auth()->user())
-       <i class="fas fa-user"></i>
-     @else
-          {{auth()->user()->username ??''}}
-     @endif
-  </a>
+                     @include('layouts.nav_icon')
+                     <div class="dropdown">
+  <a class="nav-link text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <i class="fas fa-user"></i>
+       </a>
     
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-   @if(!auth()->user())
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="">
+        @if(!auth()->user())
     <a class="dropdown-item" href="{{route('login')}}" >Login</a>
    
     @else
@@ -102,107 +58,172 @@
       @csrf
     </form>
     @endif
-  </div>
+   
+      </div>
 </div>
-         <!-- Sidebar -->
-    <div class="sidebar" style="width:100%; overflow-x: auto;overflow-y: auto;"> 
-      <!-- Sidebar user panel (optional) -->
-     <!-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-         user admin info here 
-      </div>-->
-<ul class="sidebar-nav navbar-nav">
+                    </ul>
+               
+    </div>
+</div>
+        </nav>
 
-      <li class="nav-item">
-         <label for="nav-search" class="col-2 col-form-label sr-only">Search links</label>
-         <div class="col p-2">
-            <input class="form-control form-control-sm search-filter" type="search" id="nav-search" placeholder="Search for tools">
-         </div>
-      </li>
- <div id="link-content" style="font-size:17px;"><!-- added this to wrap the links-->     
+
+
+                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  
+                    </div>
+   
       
-      <li class="nav-item">
-         <span class="navbar-brand">Categories</span>
-      </li>
-     @foreach($categories as $category)
-      <li class="nav-item ">
-             <a class="nav-link nav-link-collapse" data-toggle="collapse" href="#collapseComponents{{$category->id}}"><i class="fa fa-fw fa-list"></i>  {{$category->name}}</a>
-       <ul class="sidebar-second-level collapse" id="collapseComponents{{$category->id}}">
-              <li style="font-size:12px;list-style:none;">
-                <a href="{{route('categories_view',$category->id)}}" >{{$category->name}}</a>
-            </li>
-               @foreach ($category->childrenCategories as $childCategory)
-                  @include('layouts.category_childern_hone', ['child_category' => $childCategory,'third'=>'no'])
-               @endforeach
-         
-        </ul>
-      </li>
-      @endforeach
-       
-     
-</div>
-   </ul>
-      <!-- /.sidebar-menu -->
+    <!-- LOGO -->
+   
+    <!-- END LOGO-->
+    <!-- TOP NAVIGATION -->
+   
+    <!-- END TOP NAVIGATION -->
+    <!-- SEARCH FIELD AREA -->
+    <div class="searchfield bg-hed-six">
+       @yield('search_div')
     </div>
-    </div>
-  </aside>
-  <div id="sidebar-overlay"></div>
-    </div>
- 
-
-     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    @yield('js')
-    <script type="text/javascript">
-        var debounce;
-       $('#search_query').keyup(function(e){
-            clearTimeout(debounce);
-               let ser_text_len =$(this).val().length;
-               let ser_text =$(this).val();
-              // $('#autocomplete').html('');
-              
-              console.log(ser_text_len % 3 );
-               if( (ser_text_len > 3 ) && ser_text.trim()!='')
-               {
-                 $('#autocomplete').html('');
-                  $('#autocomplete').css('display','block');
-                      debounce = setTimeout( 
-                                function () { 
-                                      get_keywords(ser_text.trim()); 
-                                },300
-                             );
-                       
-               }
-               if(ser_text_len <= 0)
-               {
-                $('#autocomplete').css('display','none');
-                $('#autocomplete').html('');
-               }
-        });
-       function get_keywords(ser_text)
-       {   
+    <!-- END SEARCH FIELD AREA -->
+    <!-- MAIN SECTION -->
+    <div class="container featured-area-default padding-30">
+        <div class="row">
+            
+                  @yield('content')
            
+            <!-- END ARTICLES CATEOGIRES SECTION -->
+            <!-- SIDEBAR STUFF -->
+            <div class="col-md-4 padding-20">
+                <!--
+                <div class="row margin-bottom-30">
+                    <div class="col-md-12 ">
+                        <div class="support-container">
+                            <h2 class="support-heading">Need more Support?</h2>
+                            If you cannot find an answer in the knowledgebase, you can
+                            <a href="#">contact us</a> for further help.
+                        </div>
+                    </div>
+                </div>
+                end support staff -->
 
-          $.get('/page/keyword/',{keyword:ser_text},function(response){
+              
+                    
+                            @yield('questions')
+                      
 
-                  let render = '<ul class="list-group">';
-                //  console.log(response[0].title);
-                         $('#autocomplete').html('');
-                  if(response.length >0)
-                  {
-                        
-                   response.forEach((val,key)=>{
-                         console.log(val);
-                     var url = '{{ route("pageView",[":slug"]) }}';
-                     url = url.replace(':slug', val.slug);
-                       render+=`<li class="list-group-item link_search"><i class="fas fa-book icon-color">&nbsp;</i> <a href="${url}" style="" class="link_search">${val.title}</a></li>`;
-                     });
-                   render+='</ul>';
-                   $('#autocomplete').html(render);
-                  }
-           },'json');
-            //console.log(output);
-            //return out_put;
-       }
+              
+                            @yield('articles')
+                    
+
+                <!-- POPULAR TAGS (SHOW MAX 20 TAGS) -->
+                
+                            @yield('temp_q','')
+                       
+                <!-- END POPULAR TAGS (SHOW MAX 20 TAGS) -->
+            </div>
+            <!-- END SIDEBAR STUFF -->
+        </div>
+    </div>
+    <!-- END MAIN SECTION -->
+
+    <!-- ABOUT CONTAINER BOTTOM -->
+    <div class="container-fluid featured-area-grey padding-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="fb-heading text-center">
+                        <span class="border border-success p-3 shadow-lg rounded">Fakrny</span>
+                    </div>
+                    <div class="fb-content">
+                        <p class="display-5">
+                            Fakrny is a modern Knowledge base System Helps us to navigate over well documented contents and articles , That Contains an organized content structure to be as fast as possible in your work and be supported with right info
+                        </p>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END ABOUT CONTAINER BOTTOM -->
+
+    <!-- FOOTER -->
+    <div class="container-fluid footer marg30">
+        <div class="container">
+            <!-- FOOTER COLUMN ONE -->
+            <!-- END FOOTER COLUMN ONE -->
+            <!-- FOOTER COLUMN TWO -->
+            <div class="col-xs-12 col-sm-4 col-md-4 margin-top-20">
+                <div class="panel-transparent">
+                    <div class="footer-heading">Categories</div>
+                    <div class="footer-body">
+                        <ul>
+                        @foreach($categories as $category)
+                            <li>
+                                <a href="{{route('categories_view',$category->id)}}">{{$category->name}}</a>
+                            </li>
+                        @endforeach   
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- END FOOTER COLUMN TWO -->
+            <!-- FOOTER COLUMN THREE -->
+
+            <!-- END FOOTER COLUMN THREE -->
+        </div>
+    </div>
+    <!-- END FOOTER -->
+
+    <!-- COPYRIGHT INFO -->
+    <div class="container-fluid footer-copyright marg30">
+        <div class="container">
+            <div class="pull-left">
+                Copyright © 2022 Fakrny Kb @verision 1.1.1</a>
+            </div>
+        </div>
+    </div>
+    <!-- END COPYRIGHT INFO -->
+
+    <!-- LOADING MAIN JAVASCRIPT -->
+    <script src="{{ asset('js/app.js') }}"></script>
+
+ @yield('js')
+    <script type="text/javascript">
+
+         $( "#search_query" ).autocomplete({
+  
+        source: function(request, response) {
+            $.ajax({
+            url: "/page/keyword/",
+            type:'GET',
+            data: {
+                    keyword : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               render='';
+               var resp = $.map(data,function(obj){
+                    return {value:obj.title,slug:obj.slug};
+               }); 
+              
+  
+               response(resp);
+            },
+           
+        });
+    },
+    minLength: 3,
+    select:function( event, ui ) {
+                var url = '{{ route("pageView",[":slug"]) }}';
+                     url = url.replace(':slug', ui.item.slug);
+                window.location.href=url;
+            }
+ }).autocomplete( "instance" )._renderItem = function( ul, item ) {
+      return $( '<li>')
+        .append('<div class="pt-2 pb-2 col-md-12" >'+'<i class="fas fa-book icon-color"></i> &nbsp;&nbsp;&nbsp;' + item.value+ "</div>")
+        .appendTo( ul );
+    };
+
 // Case insensitive method for filter
 jQuery.expr[':'].casecontains = (a, b, c) => jQuery(a).text().toUpperCase().indexOf(c[3].toUpperCase()) >= 0;
 
@@ -230,3 +251,4 @@ $('.search-filter').on('keyup', function () {
     </script>
 </body>
 </html>
+

@@ -8,6 +8,13 @@
 
 @import '~bootstrap/scss/bootstrap';
 
+$grid-breakpoints: (
+  xs: 0,
+  sm: 600px,
+  md: 900px,
+  lg: 1000px,
+  xl: 1280px
+);
 
 // AdmintLTE
 
@@ -38,7 +45,10 @@
 //rhythm home
 
 // bootstrab toggle btns
+@import 'jquery-ui/themes/base/all.css';
+@import "../css/rh_home.css";
+
+// style css
+@import "../css/style.css";
 
 
-
-@import "../css/rh_home.css"

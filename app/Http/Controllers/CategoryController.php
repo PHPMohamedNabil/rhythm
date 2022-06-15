@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\DataTables\CategoryDatatable;
@@ -23,6 +23,7 @@ class CategoryController extends Controller
     }
     public function index(CategoryDatatable $table)
     {
+       // return(Category::find(6)->toArray());
         $categories = Category::whereNull('category_id')
         ->with('childrenCategories')
         ->get();
@@ -108,7 +109,13 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {   
-        
+        $pages_count = DB::table('pages')->select('id')->where('category_id',$category->id)->where('is_history',0)->count();
+        if($pages_count >0)
+        {
+           $name = $category->name;
+
+           return redirect()->route('category.index')->with('err', $name);
+        }
         $name = $category->name;
         $category->delete();
 

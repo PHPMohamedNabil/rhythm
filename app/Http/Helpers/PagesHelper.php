@@ -150,6 +150,21 @@ trait PagesHelper{
 
     }
 
+    public function pageSearchView(Request $request)
+    {
+         $request->validate(['page_name'=>'string']);
+
+         $keyword = $request->page_name;
+         
+         if($keyword == '')
+         {
+            return view('page_resultes',['pages'=>[]]);
+         }      
+         $page_titles = DB::table('pages')->select('title','id','slug','long_description','short_description')->where('title', 'LIKE',"%{$keyword}%")->where('published',1)->where('is_history',0)->whereNull('deleted_at')->paginate(8);
+
+         return view('page_resultes',['pages'=>$page_titles,'keyword'=>$keyword]);
+    }
+
     public function toggleNumber( $num ) {
              return $num ^= 1;
       }

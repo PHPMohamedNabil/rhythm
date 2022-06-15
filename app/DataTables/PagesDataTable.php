@@ -36,6 +36,12 @@ class PagesDataTable extends DataTable
                     return $data->user->username;
                 }
                 return null;
+            })->addColumn('category',function($data){
+                if($data->category)
+                {
+                    return $data->category->name;
+                }
+                return null;
             })
             ->addColumn('checkbox',function($data){
                  return view('admin.pages.check_all',['data'=>$data]);
@@ -51,7 +57,7 @@ class PagesDataTable extends DataTable
      */
     public function query(Page $model)
     {
-        return $model::with('user')->where('is_history',0);
+        return $model::with('user','category')->where('is_history',0);
     }
 
     /**
@@ -95,6 +101,7 @@ class PagesDataTable extends DataTable
             Column::make('published'),
             Column::make('created_at')->width('90px'),
             ['data'=>'user','name'=>'user.username','title'=>'Author','width'=>'50px'],  
+             ['data'=>'category','name'=>'category.name','title'=>'Category','width'=>'50px'],  
             Column::make('action'),
         ];
 

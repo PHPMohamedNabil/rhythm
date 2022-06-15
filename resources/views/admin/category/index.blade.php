@@ -124,6 +124,14 @@ swalWithBootstrapButtons.fire({
     )
  @endif
 
+  @if(session('err'))
+   swalWithBootstrapButtons.fire(
+      'Error!',
+      'Category {{session("del")}} Has many artilces.',
+      'error'
+    )
+ @endif
+
 
 </script>
 @endsection

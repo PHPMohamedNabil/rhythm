@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
+@section('search_non_main')
+<div class="row">
+    <div class="col-md-12 search-div" style="margin-left:86px;">
+              <form method="get" class="" action="{{route('p_search')}}">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search for Page?" autocomplete="off" id="search_query" name="page_name">
+                          <button class=" btn btn-info btn-sm ml-3" type="submit" style="margin-top: 0px;">Search</button>
+                        </div>
+                    </form>
 
+             </div>
+</div>
+@endsection
 @section('content')
  <div class="container">
      <div class="row">

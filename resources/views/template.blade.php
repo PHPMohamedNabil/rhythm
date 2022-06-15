@@ -1,35 +1,58 @@
 @extends('layouts.app')
 
+@section('search_non_main')
+<div class="row">
+    <div class="col-md-12" style="margin-left:86px;">
+             <form method="get" class="" action="{{route('p_search')}}">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search for Page?" autocomplete="off" id="search_query" name="page_name">
+                          <button class=" btn btn-info btn-sm ml-3" type="submit" style="margin-top: 0px;">Search</button>
+                        </div>
+                    </form>
+
+             </div>
+</div>
+@endsection
+@section('search_div')
+ <div class="container" style="padding-top: 20px; padding-bottom: 20px;">
+            <div class="row  margin-bottom-20">
+               <div class="col-md-12 justify-content-center align-itmes-cetner">
+                     <h1 class="white d-block">Templates</h1>
+                     <p>
+                         Search for Templates
+                     </p>
+                  
+               </div>
+            </div>
+            <br>
+            <div class="row justify-content-center">
+             <div class="col-md-6">
+ <form  action="{{route('template_search')}}">
+                        <div class="input-group">
+                            <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here" value="{{$word}}" name="query">
+                           
+                        </div>
+ </form>
+
+             </div>
+            </div>
+           
+
+        </div>
+
+@endsection
 @section('content')
+<div class="col-md-12 padding-20">
 <div class="container">
      <div class="row">
          <div class="col-md-12">
-             <section class="content-header">
-              <div class="container-fluid">
-        <h2 class="text-center display-4">templates</h2>
-      </div>
-    </section>
     <section class="content">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-8 offset-md-2">
-                    <form  action="{{route('template_search')}}">
-                        <div class="input-group input-group-lg">
-                            <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here" value="{{$word}}" name="query">
-                            <div class="input-group-append">
-                                <button type="submit" class="btn btn-lg btn-default">
-                                    <i class="fa fa-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
             <div class="row mt-3">
              @if(isset($templates) && count($templates)>0)
 
               @foreach($templates as $template)
-                <div class="col-md-10 offset-md-1">
+                <div class="col-md-12 offset-md-1">
                     <div class="list-group">
                         <div class="list-group-item">
                             <div class="row">
@@ -89,7 +112,9 @@
     </section>
      
 </div>
-
+</div>
+</div>
+</div>
 @endsection
 
 @section('js')

@@ -1,4 +1,17 @@
 @extends('layouts.app')
+@section('search_non_main')
+<div class="row">
+    <div class="col-md-12" style="margin-left:86px;">
+               <form method="get" class="" action="{{route('p_search')}}">
+                        <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search for Page?" autocomplete="off" id="search_query" name="page_name">
+                          <button class=" btn btn-info btn-sm ml-3" type="submit" style="margin-top: 0px;">Search</button>
+                        </div>
+                    </form>
+
+             </div>
+</div>
+@endsection
 @section('content')
 <style type="text/css">
     .dropdown-toggle::after {
@@ -71,7 +84,9 @@
                         <h2 class="h5 mb-0">{{$wall->title}}</h2><span class="small text-gray"><i class="fa fa-clock-o mr-1"></i>{{date('Y-m-d h:i',strtotime($wall->updated_at))}}</span>
                         <p class="text-small mt-2 font-weight-light" style="word-wrap: break-word;">{{$wall->description}}</p>
                         @if($wall->attachment)
-                             <img src="{{asset($wall->attachment)}}" style="width:100%; height:100%;" />
+                            <div class="text-center">
+                                 <img src="{{asset($wall->attachment)}}" style="width:70%; height:100%;" />
+                            </div>
                         @endif
                     </li>
                  @endforeach

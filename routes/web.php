@@ -57,6 +57,11 @@ Route::post('/question/delete/attachment',[App\Http\Controllers\QuestionControll
 Route::get('/page/keyword/',[App\Http\Controllers\PageController::class,'pageSearch'])->name('page_keywords');
 /*end search query*/
 
+//page search view resultes
+
+Route::get('/page/view/search',[App\Http\Controllers\PageController::class,'pageSearchView'])->name('p_search');
+
+
 //template search
 Route::get('/templates/search',[App\Http\Controllers\ShortCutController::class,'templateSearch'])->name('template_search');
 

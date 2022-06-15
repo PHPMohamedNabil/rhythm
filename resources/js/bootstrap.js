@@ -15,7 +15,8 @@ window._ = require('lodash');
    window.Swal = Swal;
     Window.select2 = require('select2');
     window.summernote = Summernote;
-    
+    window.autocomplete = require( "jquery-ui/ui/widgets/autocomplete" );
+  
 
     
 
@@ -32,7 +33,6 @@ try {
     require('datatables.net-buttons-bs4');
 
      
-
 
 
     

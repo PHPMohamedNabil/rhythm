@@ -6,7 +6,7 @@
 <div class="collapse" id="collapseExample{{ $categories->id }}">
   <div class="card card-body">
         @foreach ($categories->childrenCategories as $childCategory)
-            @include('admin.category.childern_category_col', ['child_category' => $childCategory,'pref'=>'/','edit'=>false])
+            @include('admin.category.childern_category_col', ['child_category' => $childCategory,'pref'=>'/','edit'=>false,'child_p_count'=>$childCategory->childrenPages->count()])
         @endforeach
     </div>
 </div>

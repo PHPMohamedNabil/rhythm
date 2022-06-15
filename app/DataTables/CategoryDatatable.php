@@ -41,7 +41,9 @@ class CategoryDatatable extends DataTable
     public function query(Category $model)
     {
         return $model::whereNull('category_id')
-        ->with('childrenCategories');
+        ->with(['childrenCategories','childrenPages'=>function($query){
+                   $query->where('is_history',0);
+        }])->withCount(['pages','childrenPages']);
     }
 
     /**
