@@ -79,7 +79,7 @@ Route::get('/systemlinks/all',[App\Http\Controllers\SystemLinkController::class,
 Route::post('/wall/delete/attachment',[App\Http\Controllers\WallController::class,'wallDeleteAtt'])->name('wall_del_att');
 //wall daily
 
-Route::get('walls/all',[App\Http\Controllers\WallController::class,'getAllWalls'])->name('walls_all')->middleware('auth');
+Route::get('walls/all',[App\Http\Controllers\WallController::class,'getAllWalls'])->name('walls_all');
 
 //Route::get('walls/{id}/user/all',[App\Http\Controllers\SystemLinkController::class,'getAllWallsUser']);
 Route::get('walls/home/create',[App\Http\Controllers\SystemLinkController::class,'getAllWalls']);
